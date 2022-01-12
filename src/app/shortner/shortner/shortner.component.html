@@ -1,0 +1,17 @@
+
+<div class="main">
+<form [formGroup]="formGroup">
+
+    <mat-form-field>
+        <input matInput placeholder="shorten your link:" formControlName="longUrl"/>
+    </mat-form-field>
+    <button mat-raised-button [innerText]="'shorten'" (click)="shorten()"></button>
+</form>
+
+
+<br/>
+    <div *ngIf="isAdded">
+    <span [innerText]="'the shorte URL:'"></span>
+    <span [innerText]="shortUrl$ | async"></span>
+    </div>
+</div>
